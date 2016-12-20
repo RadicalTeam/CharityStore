@@ -42,3 +42,4 @@ function getXMLNodeValue(node_name,xml){
     var _tmp = tmp[1].split("</"+node_name+">");
     return _tmp[0];
 }
+
