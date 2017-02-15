@@ -14,6 +14,7 @@ function validateToken(req,res){
   var query = url.parse(req.url,true).query;
   //console.log("*** URL:" + req.url);
   //console.log(query);
+  console.log(query);
   var signature = query.signature;
   var echostr = query.echostr;
   var timestamp = query['timestamp'];
