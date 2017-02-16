@@ -32,7 +32,7 @@ function validateToken(req,res){
     res.end(echostr);
     console.log("Confirm and send echo back");
   }else {
-    res.end("false");
+    res.end(echostr);
     console.log("Failed!");
   }
 }
