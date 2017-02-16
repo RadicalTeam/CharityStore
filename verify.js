@@ -28,13 +28,10 @@ function validateToken(req,res){
   console.log("Original str : " + original);
   var scyptoString = sha1(original);
   console.log("Signature : " + signature );
-  if(signature == scyptoString){
+  
     res.end(echostr);
     console.log("Confirm and send echo back");
-  }else {
-    res.end(echostr);
-    console.log("Failed!");
-  }
+ 
 }
 
 
