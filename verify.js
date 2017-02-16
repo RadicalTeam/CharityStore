@@ -15,7 +15,7 @@ function validateToken(req,res){
   //console.log("*** URL:" + req.url);
   //console.log(query);
   console.log(query);
-  var signature = query.signature;
+  var signature = query['msg_signature'];
   var echostr = query.echostr;
   var timestamp = query['timestamp'];
   var nonce = query.nonce;
