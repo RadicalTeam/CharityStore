@@ -16,7 +16,7 @@ function validateToken(req,res){
   //console.log(query);
   console.log(query);
   var signature = query['msg_signature'];
-  var echostr = deleteBomHeader(query.echostr);
+  var echostr = query.echostr;
   var timestamp = query['timestamp'];
   var nonce = query.nonce;
   var oriArray = new Array();
@@ -40,8 +40,3 @@ webSvr.listen(80,function(){
   console.log("Start validate");
 });
 
-function deleteBomHeader(str){
-  var strBuffer = new Buffer(str);
-  var newStr = strBuffer.slice(3).toString('utf-8');
-  return newStr;
-}
