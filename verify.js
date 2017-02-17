@@ -42,14 +42,15 @@ webSvr.listen(80,function(){
 
 function wechat(req, res) {
     var echostr, nonce, signature, timestamp;
-    signature = req.query.signature;
-    timestamp = req.query.timestamp;
-    nonce = req.query.nonce;
-    echostr = req.query.echostr;
-    if(check(timestamp,nonce,signature,your_token)){
+    var query = url.parse(req.url).query;
+    var signature = query['msg_signature'];
+    var echostr = query.echostr;
+    var timestamp = query['timestamp'];
+    var nonce = query.nonce;
+    if(check(timestamp,nonce,signature,'pluo')){
         return res.send(echostr);
     }else{
-        return res.end();
+        return res.end('false');
     }
 };
 
