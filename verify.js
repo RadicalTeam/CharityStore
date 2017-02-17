@@ -28,7 +28,6 @@ function validateToken(req,res){
   console.log("Original str : " + original);
   var scyptoString = sha1(original);
   console.log("Signature : " + signature );
-  
     res.end(echostr);
     console.log("Confirm and send echo back");
  
@@ -39,24 +38,3 @@ var webSvr = http.createServer(wechat);
 webSvr.listen(80,function(){
   console.log("Start validate");
 });
-
-function wechat(req, res) {
-    var echostr, nonce, signature, timestamp;
-    var query = url.parse(req.url).query;
-    var signature = query['msg_signature'];
-    var echostr = query.echostr;
-    var timestamp = query['timestamp'];
-    var nonce = query.nonce;
-    if(check(timestamp,nonce,signature,'pluo')){
-        return res.send(echostr);
-    }else{
-        return res.end('false');
-    }
-};
-
-function check(timestamp, nonce, signature ,token) {
-    var currSign, tmp;
-    tmp = [token, timestamp, nonce].sort().join("");
-    currSign = crypto.createHash("sha1").update(tmp).digest("hex");
-    return currSign === signature;
-};
