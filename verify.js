@@ -29,7 +29,7 @@ function validateToken(req,res){
   var scyptoString = sha1(original);
   console.log("Signature : " + signature );
     console.log(escape(echostr));
-    res.end(escape(echostr));
+    res.end(echostr);
     console.log("Confirm and send echo back");
  
 }
@@ -43,4 +43,5 @@ webSvr.listen(80,function(){
 function deleteBomHeader(str){
   var strBuffer = new Buffer(str);
   var newStr = strBuffer.slice(3).toString('utf-8');
+  return newStr;
 }
