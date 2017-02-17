@@ -35,7 +35,27 @@ function validateToken(req,res){
 }
 
 
-var webSvr = http.createServer(validateToken);
+var webSvr = http.createServer(wechat);
 webSvr.listen(80,function(){
   console.log("Start validate");
 });
+
+function wechat(req, res) {
+    var echostr, nonce, signature, timestamp;
+    signature = req.query.signature;
+    timestamp = req.query.timestamp;
+    nonce = req.query.nonce;
+    echostr = req.query.echostr;
+    if(check(timestamp,nonce,signature,your_token)){
+        return res.send(echostr);
+    }else{
+        return res.end();
+    }
+};
+
+function check(timestamp, nonce, signature ,token) {
+    var currSign, tmp;
+    tmp = [token, timestamp, nonce].sort().join("");
+    currSign = crypto.createHash("sha1").update(tmp).digest("hex");
+    return currSign === signature;
+};
