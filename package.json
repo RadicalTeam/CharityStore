@@ -12,6 +12,7 @@
   "author": "pluo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "wechat-crypto": "^0.0.2"
   }
 }
