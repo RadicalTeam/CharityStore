@@ -9,7 +9,8 @@ var config = {
 
 var app = express();
 
-app.get('/wxservice', function(req, res){
+app.get('', function(req, res){
+    console.log(req.url);
     var msg_signature = req.query.msg_signature;
     var timestamp = req.query.timestamp;
     var nonce = req.query.nonce;
