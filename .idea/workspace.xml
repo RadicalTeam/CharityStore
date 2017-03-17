@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0061ea38-6bab-4997-82fb-a68c74a63538" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/verifyForEnterprise.js" afterPath="$PROJECT_DIR$/verifyForEnterprise.js" />
-    </list>
+    <list default="true" id="0061ea38-6bab-4997-82fb-a68c74a63538" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -201,12 +199,12 @@
       <option name="presentableId" value="Default" />
       <updated>1483066182341</updated>
       <workItem from="1483066183938" duration="157000" />
-      <workItem from="1488012178126" duration="731000" />
+      <workItem from="1488012178126" duration="922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="888000" />
+    <option name="totallyTimeSpent" value="1079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
